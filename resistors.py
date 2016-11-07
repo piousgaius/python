@@ -357,3 +357,19 @@ def cg():
     print("isw means -in series with-")
     print("pt means -parallel to-")
     return;
+
+#this is to solve those problems that look like a figure 8
+def f():
+    #setting up variables
+    print("layout: a is top left, b is top right, c is centre, d is bottom left, e is bottom right")
+    a = float(input("Resistor a = "))
+    b = float(input("Resistor b = "))
+    c = float(input("Resistor c = "))
+    d = float(input("Resistor d = "))
+    e = float(input("Resistor e = "))
+
+    #calculations
+    #see http://www.calvin.edu/~svleest/circuitExamples/equRes/irred.ans.html for why this works
+    v = (a*b*d + a*c*d + b*c*d + a*b*e + a*c*e + b*c*e + a*d*e + b*d*e)/(a*b + a*c + b*c + b*d + c*d + a*e + c*e + d*e)
+    print(v)
+    return;
