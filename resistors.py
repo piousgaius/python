@@ -373,3 +373,330 @@ def f():
     v = (a*b*d + a*c*d + b*c*d + a*b*e + a*c*e + b*c*e + a*d*e + b*d*e)/(a*b + a*c + b*c + b*d + c*d + a*e + c*e + d*e)
     print(v)
     return;
+
+
+#this is to solve e24 questions where they're in parallel
+
+#where it's 3 parallel to eachother
+def p():
+    values = []
+    e24 = [1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.5,
+    1.6,
+    1.8,
+    2.0,
+    2.2,
+    2.4,
+    2.7,
+    3.0,
+    3.3,
+    3.6,
+    3.9,
+    4.3,
+    4.7,
+    5.1,
+    5.6,
+    6.2,
+    6.8,
+    7.5,
+    8.2,
+    9.1,
+    10,
+    11,
+    12,
+    13,
+    15,
+    16,
+    18,
+    20,
+    22,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    43,
+    47,
+    51,
+    56,
+    62,
+    68,
+    75,
+    82,
+    91,
+    100,
+    110,
+    120,
+    130,
+    150,
+    160,
+    180,
+    200,
+    220,
+    240,
+    270,
+    300,
+    330,
+    360,
+    390,
+    430,
+    470,
+    510,
+    560,
+    620,
+    680,
+    750,
+    820,
+    910]
+    DR = float(input("desired resistance = "))
+    ccount = 0
+    bcount = 0
+    acount = 0
+    a = 1
+    b = 1
+    c = 1
+    while acount < 72:
+        a = float(e24[acount])
+        b = float(e24[bcount])
+        c = float(e24[ccount])
+        ccount = ccount + 1
+        if ccount == 72:
+            ccount = 0
+            bcount = bcount + 1
+        if bcount == 72:
+            bcount = 0
+            acount = acount + 1
+        values.insert(0, abs(float(DR) - ((1/((1/a) + (1/b) + (1/c))))))
+    values.reverse()
+    x = min(values)
+    print(str(x))
+    i = values.index(float(x))
+    print(str(i))
+    e24c = e24*72*72
+    e24b = e24*72
+    e24b.sort()
+    e24b = e24b*72
+    e24a = e24*72*72
+    e24a.sort()
+    print(str(e24a[i]) + " " + str(e24b[i]) + " " + str(e24c[i]))
+    return;    
+
+#where it's 1 in series with 2 in parallel
+def q():
+    values = []
+    e24 = [1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.5,
+    1.6,
+    1.8,
+    2.0,
+    2.2,
+    2.4,
+    2.7,
+    3.0,
+    3.3,
+    3.6,
+    3.9,
+    4.3,
+    4.7,
+    5.1,
+    5.6,
+    6.2,
+    6.8,
+    7.5,
+    8.2,
+    9.1,
+    10,
+    11,
+    12,
+    13,
+    15,
+    16,
+    18,
+    20,
+    22,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    43,
+    47,
+    51,
+    56,
+    62,
+    68,
+    75,
+    82,
+    91,
+    100,
+    110,
+    120,
+    130,
+    150,
+    160,
+    180,
+    200,
+    220,
+    240,
+    270,
+    300,
+    330,
+    360,
+    390,
+    430,
+    470,
+    510,
+    560,
+    620,
+    680,
+    750,
+    820,
+    910]
+    DR = float(input("desired resistance = "))
+    ccount = 0
+    bcount = 0
+    acount = 0
+    a = 1
+    b = 1
+    c = 1
+    while acount < 72:
+        a = float(e24[acount])
+        b = float(e24[bcount])
+        c = float(e24[ccount])
+        ccount = ccount + 1
+        if ccount == 72:
+            ccount = 0
+            bcount = bcount + 1
+        if bcount == 72:
+            bcount = 0
+            acount = acount + 1
+        values.insert(0, abs(float(DR) - ((float(a)) + (1/((1/b) + (1/c))))))
+    values.reverse()
+    x = min(values)
+    print(str(x))
+    i = values.index(float(x))
+    print(str(i))
+    e24c = e24*72*72
+    e24b = e24*72
+    e24b.sort()
+    e24b = e24b*72
+    e24a = e24*72*72
+    e24a.sort()
+    print(str(e24a[i]) + " isw " + str(e24b[i]) + " pt " + str(e24c[i]))
+    return;
+    
+#where it's 2 together with another one in parallel
+def r():
+    values = []
+    e24 = [1.0,
+    1.1,
+    1.2,
+    1.3,
+    1.5,
+    1.6,
+    1.8,
+    2.0,
+    2.2,
+    2.4,
+    2.7,
+    3.0,
+    3.3,
+    3.6,
+    3.9,
+    4.3,
+    4.7,
+    5.1,
+    5.6,
+    6.2,
+    6.8,
+    7.5,
+    8.2,
+    9.1,
+    10,
+    11,
+    12,
+    13,
+    15,
+    16,
+    18,
+    20,
+    22,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    43,
+    47,
+    51,
+    56,
+    62,
+    68,
+    75,
+    82,
+    91,
+    100,
+    110,
+    120,
+    130,
+    150,
+    160,
+    180,
+    200,
+    220,
+    240,
+    270,
+    300,
+    330,
+    360,
+    390,
+    430,
+    470,
+    510,
+    560,
+    620,
+    680,
+    750,
+    820,
+    910]
+    DR = float(input("desired resistance = "))
+    ccount = 0
+    bcount = 0
+    acount = 0
+    a = 1
+    b = 1
+    c = 1
+    while acount < 72:
+        a = float(e24[acount])
+        b = float(e24[bcount])
+        c = float(e24[ccount])
+        ccount = ccount + 1
+        if ccount == 72:
+            ccount = 0
+            bcount = bcount + 1
+        if bcount == 72:
+            bcount = 0
+            acount = acount + 1
+        values.insert(0, abs(float(DR) - ((1/((1/(a+b)) + (1/c))))))
+    values.reverse()
+    x = min(values)
+    print(str(x))
+    i = values.index(float(x))
+    print(str(i))
+    e24c = e24*72*72
+    e24b = e24*72
+    e24b.sort()
+    e24b = e24b*72
+    e24a = e24*72*72
+    e24a.sort()
+    print(str(e24a[i]) + " " + str(e24b[i]) + "  pt  " + str(e24c[i]))
+    return;
