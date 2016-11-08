@@ -27,26 +27,28 @@ def d(ZeroForVoltageOneForCurrent):
     z =0
     List1 = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
     List2 = []
+    List3 = []
     num = int(input("how many known resistors do you have? "))
     newList = List1[0:num]
     count = 0
     while count <= num-1:
         newList[count] = float(input("enter resistor number " + str(count+1) + ": "))
         List2.insert(0, 1/float(newList[count]))
+        List3.insert(0, float(newList[count]))
         count = count + 1
-    Req = 1/sum(List2)
-    if ZeroForVoltageOneForCurrent != 0 and ZeroForVoltageOneForCurrent != 1:
-        print("you've fucked up the argument my girl")
-    elif ZeroForVoltageOneForCurrent == 0:
+    ReqI = 1/sum(List2)
+    ReqV = sum(List3)
+    if ZeroForVoltageOneForCurrent == 0:
         Vt = float(input("total voltage = "))
         indexR = int(int(input("which number resistor do you want to measure the voltage across? "))-1)
         Rn = float(newList[indexR])
-        Vn = (Vt * Rn)/Req
+        Vn = (Vt * Rn)/ReqV
         print(str(Vn))
     elif ZeroForVoltageOneForCurrent == 1:
         It = float(input("total current = "))
         indexR = int(int(input("which number resistor do you want to measure the current across? "))-1)
         Rn = float(newList[indexR])
-        In = (It * Req)/Rn
+        In = (It * ReqI)/Rn
         print(str(In))
-        
+    else:
+        print("you've fucked up")
