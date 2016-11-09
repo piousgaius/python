@@ -1,3 +1,4 @@
+#for finding out what the current and or voltage are across a certain resistor if you know the total current slash voltage and the values of the resistors
 def d(ZeroForVoltageOneForCurrent):
     a =0
     b =0
@@ -52,3 +53,32 @@ def d(ZeroForVoltageOneForCurrent):
         print(str(In))
     else:
         print("you've fucked up")
+
+#for working out how close your guess is to the answer for those e12 and e24 qs
+def d2(N, T, ZeroforVoltsOneforAmps):
+    R1 = float(input("R1 = "))
+    R2 = float(input("R2 = "))
+    if ZeroforVoltsOneforAmps == 1:
+        Req = 1/((1/R1)+(1/R2))
+        print(str(Req/R2))
+    elif ZeroforVoltsOneforAmps == 0:
+        Req = R1 + R2
+        print(str(R2/Req))
+    print(str(N/T))
+
+#work out the resistance if you know the current across it
+def d3(ZeroinlinewithUnknownOneinlinewithKnown):
+    It = float(input("It = "))
+    In = float(input("In = "))
+    r = float(input("r = "))
+    if ZeroinlinewithUnknownOneinlinewithKnown == 0:
+        R = r*((It/In)-1)
+    elif ZeroinlinewithUnknownOneinlinewithKnown ==1:
+        R = r/((It/In)-1)
+    else:
+        R = "what the fuck mang"
+    print(str(R))
+
+#work out the resistance if you know the voltage
+def d4():
+    
