@@ -30,7 +30,7 @@ def qList(variables):
     countD = variables - 1
     originalcountD = countD
     print("")         
-    print("clear; ")
+    #print("clear; ")
     while countC > 0:
         print(str(nList[a])),
         while countD > 0:
