@@ -26,7 +26,7 @@ def bez():
 	    ly = f*(y2 - y1)
 	    lx = f*(x2 - x1)
 	    xlist.append(lx + xIncr*count)
-	    ylist.append(ly + xIncr*count)
+	    ylist.append(ly + yIncr*count)
 	    z = x1 + lx, y1 + ly
 	    bezCurve.append(z)
 	    count = count + 1
